@@ -14,7 +14,7 @@ export function handleNotification(data: any) {
 }
 
 export function updateMessageHandler(publisherId: string, reviewRating: number, reviewUrl: string) {
-    var message = "You received a new review! \nPublisher ID: " + publisherId + "\nReview Rating: " + reviewRating + "\nHere is the URL: " + reviewUrl
+    var message = "You received a new review! \nPublisher ID: " + publisherId + "\nReview Rating: " + reviewRating + "\nView the review here: " + reviewUrl
     return postRequest(message);
 }
 
