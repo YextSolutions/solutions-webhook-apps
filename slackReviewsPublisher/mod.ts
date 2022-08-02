@@ -6,14 +6,15 @@ export function handleNotification(data: any) {
     if (type === "REVIEW_CREATED") {
         var publisherId = data.review.publisherId;
         var reviewRating = data.review.rating;
-        var reviewUrl = data.review.id;
+        var reviewId = data.review.id;
+        var reviewUrl = "https://www.yext.com/s/3609847/reviews#p0=status&p1=1%7C3&p2=includes&p3=&yextReviewId=" + reviewId;
         return updateMessageHandler(publisherId, reviewRating, reviewUrl);
     }
     return null;
 }
 
 export function updateMessageHandler(publisherId: string, reviewRating: number, reviewUrl: string) {
-    var message = "You received a new review! \nPublisher ID: " + publisherId + "\nReview Rating: " + reviewRating + "\nHere is the id: " + reviewUrl
+    var message = "You received a new review! \nPublisher ID: " + publisherId + "\nReview Rating: " + reviewRating + "\nHere is the URL: " + reviewUrl
     return postRequest(message);
 }
 
