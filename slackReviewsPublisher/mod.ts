@@ -5,7 +5,7 @@ export function handleNotification(data: any) {
     const type = data.meta.eventType;
     if (type === "REVIEW_CREATED") {
         var publisherId = data.review.publisherId;
-        if (data.review.recommendation == "") {
+        if (!isNaN(data.review.rating)) {
             var reviewRating = data.review.rating
             var ratingString = reviewRating.toString()
         }
