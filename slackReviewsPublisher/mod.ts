@@ -6,14 +6,14 @@ export function handleNotification(data: any) {
     if (type === "REVIEW_CREATED") {
         var publisherId = data.review.publisherId;
         var reviewRating = data.review.rating;
-        var reviewUrl = data.review.url;
+        var reviewUrl = data.review.id;
         return updateMessageHandler(publisherId, reviewRating, reviewUrl);
     }
     return null;
 }
 
 export function updateMessageHandler(publisherId: string, reviewRating: number, reviewUrl: string) {
-    var message = "You received a new review! \nPublisher ID: " + publisherId + "\nReview Rating: " + reviewRating + "\nView the review here: " + reviewUrl
+    var message = "You received a new review! \nPublisher ID: " + publisherId + "\nReview Rating: " + reviewRating + "\nHere is the id: " + reviewUrl
     return postRequest(message);
 }
 
