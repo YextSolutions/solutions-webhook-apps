@@ -8,14 +8,14 @@ export function handleNotification(data: any) {
         var publisherId = data.review.publisherId;
         var reviewRating = data.review.rating;
         var reviewId = data.review.id;
-        var reviewUrl = "https://www.yext.com/s/3609847/reviews#p0=status&p1=1%7C3&p2=includes&p3=&yextReviewId=" + reviewId;
+        var reviewUrl = "https://www.yext.com/s/${{businessId}}/reviews#p0=status&p1=1%7C3&p2=includes&p3=&yextReviewId=" + reviewId;
         return updateMessageHandler(publisherId, reviewRating, reviewUrl);
     }
     else if (type === "REVIEW_CREATED" && typeof (recommendation) !== 'undefined' ) {
         var publisherId = data.review.publisherId;
         var reviewRating = data.review.recommendation;
         var reviewId = data.review.id;
-        var reviewUrl = "https://www.yext.com/s/3609847/reviews#p0=status&p1=1%7C3&p2=includes&p3=&yextReviewId=" + reviewId;
+        var reviewUrl = "https://www.yext.com/s/${{businessId}}/reviews#p0=status&p1=1%7C3&p2=includes&p3=&yextReviewId=" + reviewId;
         return updateMessageHandler(publisherId, reviewRating, reviewUrl);
     }
     return null;
