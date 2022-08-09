@@ -1,4 +1,4 @@
-const TARGET_ENDPOINT = "https://hooks.slack.com/services/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";
+const TARGET_ENDPOINT = "${{slackWebhook}}";
 
 export function handleNotification(data: any) {
 
