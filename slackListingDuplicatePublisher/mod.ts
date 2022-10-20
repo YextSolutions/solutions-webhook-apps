@@ -11,7 +11,7 @@ export function handleListingDuplicateNotification (data: any) {
         var entityId = data.duplicate.locationId;
         var duplicateUrl = data.duplicate.url;
         var suppressionType = data.duplicate.supressionType;
-        return foundMessageHandler(publisherId, accountId, entityId, duplicateUrl, suppressionType);
+        return foundMessageHandler(publisherId,suppressionType, accountId, entityId, duplicateUrl);
     } else if (status === "UNAVAILABLE") {
         var accountId = data.meta.accountId;
         var entityId = data.duplicate.locationId;
