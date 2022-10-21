@@ -36,12 +36,12 @@ export function handleListingStatusNotification (data: any) {
 }
 
 export function notSyncPublisherMessageHandler(accountId: string, entityId: string, publisherId: string, entityUrl: string) {
-    var message = "Your listing is not synced and is waiting on publisher action! \nAccount ID: " + accountId + ", Entity ID: " + entityId +  ", Publisher: " + publisherId + "\nView Listings overview  here: " + entityUrl;
+    var message = "Your listing is not synced and is waiting on publisher action! \nAccount ID: " + accountId + ", Entity ID: " + entityId +  ", Publisher: " + publisherId + "\nView Listings overview here: " + entityUrl;
     return postRequest(message);
 }
 
 export function notSyncYextMessageHandler(accountId: string, entityId: string, publisherId: string, entityUrl: string) {
-    var message = "Your listing is not synced and is waiting on Yext action! \nAccount ID: " + accountId + ", Entity ID: " + entityId +  ", Publisher: " + publisherId +  "\nView Listings overview  here: " + entityUrl;
+    var message = "Your listing is not synced and is waiting on Yext action! \nAccount ID: " + accountId + ", Entity ID: " + entityId +  ", Publisher: " + publisherId +  "\nView Listings overview here: " + entityUrl;
     return postRequest(message);
 }
 
@@ -56,7 +56,7 @@ export function liveMessageHandler(accountId: string, entityId: string, publishe
 }
 
 export function optOutMessageHandler(accountId: string, entityUrl: string) {
-    var message = "One of your listing has been opted out! \nAccount ID: "+ accountId + "\nSee Listings overview here: " + entityUrl;
+    var message = "One of your listing has been opted out! \nAccount ID: "+ accountId + "\nView Listings overview here: " + entityUrl;
     return postRequest(message);
 }
 
