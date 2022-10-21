@@ -46,7 +46,7 @@ export function notSyncYextMessageHandler(accountId: string, entityId: string, p
 }
 
 export function unavailableMessageHandler(accountId: string, entityId: string, publisherId: string, entityUrl: string) {
-    var message = "Your listing is unavailable! \nAccount ID: "+ accountId + ", Entity ID: " + entityId + ", Publisher: " + publisherId + "\nView Listings overview here: " + entityUrl;
+    var message = "Your listing is cannot be synced! Review Status Details for more information. \nAccount ID: "+ accountId + ", Entity ID: " + entityId + ", Publisher: " + publisherId + "\nView Listings overview here: " + entityUrl;
     return postRequest(message);
 }
 
