@@ -33,12 +33,12 @@ export function createQuestionHandler(authorName: string, content: string, quest
 }
 
 export function updateQuestionHandler(authorName: string, content: string, questionUrl: string) {
-    var message = "A question has been updated on one of your listings!" + "\nAuthor: " + authorName + "\nUpdated Question: " + content + "\nView your Listings Q&A here: " + questionUrl;
+    var message = "A question has been updated on one of your listings by " + authorName + "!" + "\nUpdated Question: " + content + "\nView your Listings Q&A here: " + questionUrl;
     return postRequest(message);
 }
 
 export function updateAnswerHandler(authorName: string, content: string, questionUrl: string) {
-    var message = "An answer has been updated on one of your listings!" + "\nAuthor: " + authorName + "\nUpdated Answer: " + content + "\nView your Listings Q&A here: " + questionUrl;
+    var message = "An answer has been updated on one of your listings by " + authorName + "!" + "\nUpdated Answer: " + content + "\nView your Listings Q&A here: " + questionUrl;
     return postRequest(message);
 }
 
