@@ -17,14 +17,18 @@ export function handleListingsQANotification(data: any) {
 
         return updateQuestionHandler(authorName, content, questionUrl);
     } else if (type === "ANSWER_UPDATED") {
+        var sortedAnswers = data.question.answers.sort((objA, objB) => objB.updateTime - objA.updateTime);
         var accountId = data.meta.accountId;
-        var authorName = data.question.answers.map((obj) => obj.authorName)[0];
-        var content = data.question.answers.map((obj) => obj.content)[0];
+        var authorName = sortedAnswers.map((obj) => obj.authorName)[0];
+        var content = sortedAnswers.map((obj) => obj.content)[0];
         var questionUrl = "yext.com/s/" + accountId + "/questions";
-
-        return updateAnswerHandler(authorName, content, questionUrl);
+        if (authorName) {
+            return updateAnswerHandler(authorName, content, questionUrl);
+        }
+        else {
+            return null;
+        }
     }
-    return null;
 }
 
 export function createQuestionHandler(authorName: string, content: string, questionUrl: string) {
