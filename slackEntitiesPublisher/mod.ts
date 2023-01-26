@@ -7,14 +7,14 @@ export function handleEntityNotification (data: any) {
         var accountId = data.meta.accountId;
         var entityId = data.entityId;
         var actorLabel = data.meta.actor;
-        var entityUrl = "https://www.yext.com/s/${{businessId}}/entities"; //"https://www.yext.com/s/${{businessId}}/entity/edit3?entityIds=" + data.primaryProfile.meta.id; add in variable for business id
+        var entityUrl = "https://www.yext.com/s/${{businessId}}/entity/edit3?entityIds=" + data.primaryProfile.meta.uid;
         return createMessageHandler(accountId, entityId, actorLabel, entityUrl);
     } else if (type === "ENTITY_UPDATED") {
         var accountId = data.meta.accountId;
         var entityId = data.entityId;
         var actorLabel = data.meta.actor;
         var updatedFields = data.changedFields.fieldNames;
-        var entityUrl = "https://www.yext.com/s/${{businessId}}/entities"; //"https://www.yext.com/s/${{businessId}}/entity/edit3?entityIds=" + data.primaryProfile.meta.id; add in variable for business id
+        var entityUrl = "https://www.yext.com/s/${{businessId}}/entity/edit3?entityIds=" + data.primaryProfile.meta.uid;
         return updateMessageHandler(accountId, entityId, actorLabel, updatedFields, entityUrl);
     } else if (type === "ENTITY_DELETED") {
         var accountId = data.meta.accountId;
